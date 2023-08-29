@@ -3,7 +3,6 @@ import React from "react";
 import closeIcon from "./close-icon.png"; // Import your close icon image
 import { useENS } from "./Search";
 
-
 interface PopupProps {
   isOpen: boolean;
   onClose: () => void;
@@ -53,11 +52,17 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose, address }) => {
               onClick={onClose}
               className="text-gray-400 hover:text-gray-500 focus:outline-none focus:ring"
             >
-              <img src={closeIcon} alt="Close" />
+              close
             </button>
           </div>
           <div className="text-center">
-            {image && <img src={image} alt="Avatar" className="mx-auto h-16 w-16 rounded-full" />}
+            {image && (
+              <img
+                src={image}
+                alt="Avatar"
+                className="mx-auto h-16 w-16 rounded-full"
+              />
+            )}
             <h3
               className="mt-2 text-lg font-medium text-gray-900"
               id="modal-headline"
